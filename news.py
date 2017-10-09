@@ -40,9 +40,9 @@ def processRequest(req):
         speech = "Invalid Action specified"
         return createResponse(speech, speech)
 
-    
+    speech = "Invalid Action specified"
     yql_url = "https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
-    
+    return createResponse(speech,speech)
     result = urlopen(yql_url).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
