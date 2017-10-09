@@ -67,6 +67,7 @@ def processRequest(req):
        }
        #from news import processRequest
        #res = processRequest(req)
+    return res
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
