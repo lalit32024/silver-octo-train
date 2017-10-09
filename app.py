@@ -57,8 +57,16 @@ def processRequest(req):
        from stock import processRequest
        res = processRequest(req)
     if req.get("result").get("action") == "news.search":
-       from news import processRequest
-       res = processRequest(req)
+        speech = "hi there"
+        return {
+        "speech": speech,
+        "displayText": speech,
+        # "data": data,
+        # "contextOut": [],
+        "source": "apiai-news-org"
+        }
+       #from news import processRequest
+       #res = processRequest(req)
     return res
 
 if __name__ == '__main__':
