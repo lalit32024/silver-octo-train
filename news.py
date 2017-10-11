@@ -36,7 +36,7 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") == "news.search":
+    if req.get("result").get("action") == "NEWS":
         speech = "hi There" #"Invalid Action specified"
         return createResponse(speech, speech)
 
