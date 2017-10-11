@@ -43,8 +43,8 @@ def processRequest(req):
     result = urlopen(yql_url).read()
     data = json.loads(result)
     return {
-	"speech":"ok",
-	"displayText":"cnn"
+	"speech":data.status,
+	"displayText":data.source
     	}
     res = makeWebhookResult(data)
     return res
@@ -81,7 +81,7 @@ def createResponse(speech, displayText):
 ##    print (speech)
     return {
         "speech": speech,
-        "displayText": displayText,
+        "displayText": displayText
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
