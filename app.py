@@ -59,9 +59,9 @@ def processRequest(req):
     if req.get("result").get("action") == "NEWS":
        speech = "hi there"
        return{
-       "speech": speech,
-       "displayText": speech,
-       # "data": data,
+          "speech": speech,
+          "displayText": speech,
+          # "data": data,
        # "contextOut": [],
        #"source": "apiai-news-org"
        }
