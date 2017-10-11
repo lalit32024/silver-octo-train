@@ -57,6 +57,7 @@ def makeWebhookResult(data):
     if query is None:
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
+    from random import randint
     i=randint(0,5)
     title = data.get("articles")[i].get("title")
     descrip = data.get("articles")[i].get("description")
