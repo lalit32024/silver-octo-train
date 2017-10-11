@@ -54,8 +54,8 @@ def makeWebhookResult(data):
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
 	
-    title=data.articles[0].title
-    descrip=data.articles[0].description
+    title="hard coded title"  #data.articles[0].title
+    descrip="hard coded description" #data.articles[0].description
     
     if (title is None) or (description is None):
         speech = "Hmm! Looks like we could not fetch the news"
