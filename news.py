@@ -50,23 +50,19 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-    query = data.get('status')
+    query = data.get('articles')
     if query is None:
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
+
+    title = quote.get(['articles'][0]['title']);    
+    description = quote.get(['articles'][0]['description']);
+    
+    
+    if (title is None) or (description is None):
+        speech = "Hmm! Looks like we could not fetch the news"
     else:
-	speech = "data ok"
-	return createResponse(speech, speech)
-	
-    #title = quote.get(['articles'][0]['title']);
-    
-    #description = quote.get(['articles'][0]['description']);
-    
-    
-    #if (title is None) or (description is None):
-    #    speech = "Hmm! Looks like we could not fetch the news"
-    #else:
-     #   speech = "Title: " + title + " description: " + description
+        speech = "Title: " + title + " description: " + description
 	
     # print(json.dumps(item, indent=4))
 
@@ -76,7 +72,7 @@ def makeWebhookResult(data):
 ##    print(createResponse(speech, speech))
 ##    print("------XXXX-----")
 
-    #return createResponse(speech, speech)
+    return createResponse(speech, speech)
 
 def createResponse(speech, displayText):
 ##    print("Response:")
