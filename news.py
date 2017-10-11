@@ -57,9 +57,9 @@ def makeWebhookResult(data):
     if query is None:
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
-	
-    title = data.get("articles")[0].get("title")
-    descrip = data.get("articles")[0].get("description")
+    i=randint(0,5)
+    title = data.get("articles")[i].get("title")
+    descrip = data.get("articles")[i].get("description")
     
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
