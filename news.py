@@ -41,7 +41,7 @@ def processRequest(req):
         return createResponse(speech, speech)
     yql_url = "https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
-    data = JSON.parse(result)
+    data = json.loads(result)
     res = makeWebhookResult(data)
     return res
 
@@ -54,8 +54,8 @@ def makeWebhookResult(data):
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
 	
-    title="hard coded title"  #data.articles[0].title
-    descrip="hard coded description" #data.articles[0].description
+    title = "hard coded title"  #data.articles[0].title
+    descrip = "hard coded description" #data.articles[0].description
     
     if (title is None) or (description is None):
         speech = "Hmm! Looks like we could not fetch the news"
