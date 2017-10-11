@@ -42,6 +42,10 @@ def processRequest(req):
     yql_url = "https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
     data = json.loads(result)
+    return {
+	"speech":data.status
+	"displayText":data.source
+    	}
     res = makeWebhookResult(data)
     return res
 
