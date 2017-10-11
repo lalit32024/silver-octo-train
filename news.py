@@ -39,12 +39,12 @@ def processRequest(req):
     if req.get("result").get("action") != "news.search":
         speech = "Invalid Action specified"
         return createResponse(speech, speech)
-    yql_url = "https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
+    yql_url = "http://api.open-notify.org/astros.json" #"https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     return {
-	"speech":data.get(status),
-	"displayText":data.get(source)
+	"speech":data.get("number"),
+	"displayText":data.get("message")
     	}
     res = makeWebhookResult(data)
     return res
