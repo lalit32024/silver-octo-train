@@ -58,7 +58,7 @@ def processRequest(req):
        res = processRequest(req)
     if req.get("result").get("action") == "NEWS":
        speech = "hi there"
-       return {
+       return{
        "speech": speech,
        "displayText": speech,
        # "data": data,
