@@ -39,6 +39,7 @@ def processRequest(req):
     if req.get("result").get("action") != "news.search":
         speech = "Invalid Action specified"
         return createResponse(speech, speech)
+    speech="Title:,,,,,   description:,,,,,,"
     return {
         "speech": speech,
         "displayText": displayText,
