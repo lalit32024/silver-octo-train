@@ -56,7 +56,7 @@ def processRequest(req):
     if req.get("result").get("action") == "stockquote":
        from stock import processRequest
        res = processRequest(req)
-    if req.get("result").get("action") == "news.search":
+    if req.get("result").get("action") == "NEWS":
        speech = "hi there"
        return {
        "speech": speech,
