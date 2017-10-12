@@ -82,13 +82,13 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-        "speech": speech,
-        "displayText": displayText,
-	#"imageUrl":imageUrl
+	"type":1,
+	"title":speech
+	"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
-        }
+    }
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
