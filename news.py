@@ -82,8 +82,8 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-	"type":1,
-	"title":speech,
+	"speech":speech,
+	"displayText":displayText,
 	"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
