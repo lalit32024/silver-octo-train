@@ -82,12 +82,8 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-    	    "type": "image",
-            "payload": {
-          	"url":imageUrl
-        	}
-        #"speech": speech,
-        #"displayText": displayText,
+        "speech": speech,
+        "displayText": displayText,
 	#"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
