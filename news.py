@@ -56,17 +56,18 @@ def makeWebhookResult(data):
     query = data.get("articles")
     if query is None:
         speech = "query element missing from news's response"
-        return createResponse(speech, speech)
+        return createResponse(speech, speech,imageUrl)
     from random import randint
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
     descrip = data.get("articles")[i].get("description")
     newsurl=data.get("articles")[i].get("url")
+    urltoimage=data.get("articles")[i].get("urlToImage")
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
    # else:
-    speech = "Title: " + title + "\n Description: " + descrip + "Read In Detail Here: "+newsurl
-	
+    speech = "Title: " + title + "\n Description: " + descrip
+    
     # print(json.dumps(item, indent=4))
 
 ##    print("speech=")
@@ -75,14 +76,15 @@ def makeWebhookResult(data):
 ##    print(createResponse(speech, speech))
 ##    print("------XXXX-----")
 
-    return createResponse(speech, speech)
+    return createResponse(speech, speech,urltoimage)
 
-def createResponse(speech, displayText):
+def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
         "speech": speech,
-        "displayText": displayText
+        "displayText": displayText,
+	"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
