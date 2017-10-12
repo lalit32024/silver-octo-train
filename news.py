@@ -82,14 +82,10 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-    "facebook": {
-    	"attachment": {
-    		"type": "image",
-    		"payload": {
-          		"url":imageUrl
-        		}
-    	     	}
-  	    }   	 
+    	    "type": "image",
+            "payload": {
+          	"url":imageUrl
+        	}
         #"speech": speech,
         #"displayText": displayText,
 	#"imageUrl":imageUrl
