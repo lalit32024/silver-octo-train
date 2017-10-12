@@ -61,11 +61,11 @@ def makeWebhookResult(data):
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
     descrip = data.get("articles")[i].get("description")
-    
+    newsurl=data.get("articles")[i].get("url")
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
    # else:
-    speech = "Title: " + title + "\n Description: " + descrip
+    speech = "Title: " + title + "\n Description: " + descrip + "Read In Detail Here: "+newurl
 	
     # print(json.dumps(item, indent=4))
 
