@@ -65,7 +65,7 @@ def makeWebhookResult(data):
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
    # else:
-    speech = "Title: " + title + " description: " + descrip
+    speech = "Title: " + title + "\n Description: " + descrip
 	
     # print(json.dumps(item, indent=4))
 
