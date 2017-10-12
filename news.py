@@ -82,9 +82,17 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-        "speech": speech,
-        "displayText": displayText,
-	"imageUrl":imageUrl
+    "facebook": {
+    	"attachment": {
+    		"type": "image",
+    		"payload": {
+          		"url":imageUrl
+        		}
+    	     	}
+  	    }   	 
+        #"speech": speech,
+        #"displayText": displayText,
+	#"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
