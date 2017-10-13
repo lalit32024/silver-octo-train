@@ -40,8 +40,8 @@ def processRequest(req):
     if req.get("result").get("action")!="searchmusic":
         speech = "Invalid Action specified"
         return createResponse(speech, speech)
-    yql_url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+req.get("result").get("parameters").get("Artist")+"&api_key=c68de8a6159c02cd683804aa40debc53&format=json"
-    return createResponse(yql_url,yql_url)
+    #yql_url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+req.get("result").get("parameters").get("Artist")+"&api_key=c68de8a6159c02cd683804aa40debc53&format=json"
+    return createResponse("hi","hi")
     result = urlopen(yql_url).read()
     data = json.loads(result)
     #return {
