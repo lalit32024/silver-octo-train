@@ -60,8 +60,9 @@ def makeWebhookResult(data):
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
    # else:
-    songname=data.get("toptracks").get("track")[0].get("name")
-    return createResponse(songname,songname)
+    for i in range(0,9)
+    songname=data.get("toptracks").get("track")[i].get("name")
+    speech+=(i+1)+". "+songname+"\n"
     # print(json.dumps(item, indent=4))
 
 ##    print("speech=")
