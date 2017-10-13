@@ -63,7 +63,7 @@ def processRequest(req):
        from joke import processRequest
        res=processRequest(req)
     if req.get("result").get("action") == "searchmusic":
-       from joke import processRequest
+       from music import processRequest
        res=processRequest(req)
     return res
 
