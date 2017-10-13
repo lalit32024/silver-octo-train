@@ -59,7 +59,7 @@ def makeWebhookResult(data):
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
     #for i in range(0,0)
-      #songname= data.get("toptrack").get("track")[i].get("name")
+      songname= data.get("toptrack").get("track")[i].get("name")
       speech=(i+1)+". "+songname+"\n"
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
