@@ -82,7 +82,7 @@ def createResponse(speech, displayText,imageUrl):
 ##    print("Response:")
 ##    print (speech)
     return {
-	"speech":speech,
+	"speech":imageUrl,
 	"displayText":displayText,
 	"attachments": [{
             "type": "image",
