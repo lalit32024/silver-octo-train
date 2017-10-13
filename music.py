@@ -62,8 +62,8 @@ def makeWebhookResult(data):
    # else:
     speech=" "
     for i in range(0,9):
-        songname=data.get("toptracks").get("track")[0].get("name")
-        speech=". "+songname+"\n"
+        songname=data.get("toptracks").get("track")[i].get("name")
+        speech=speech+songname+"\n"
     # print(json.dumps(item, indent=4))
 
 ##    print("speech=")
