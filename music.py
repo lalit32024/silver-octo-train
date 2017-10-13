@@ -78,8 +78,8 @@ def createResponse(speech, displayText):
 ##    print (speech)
     return {
 	"speech":speech,
-	"displayText":displayText,
-	"imageUrl":imageUrl
+	"displayText":displayText
+	#"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
