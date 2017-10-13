@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 from __future__ import print_function
@@ -37,11 +36,11 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action")!="searchmusic":
+    if req.get("result").get("action") != "searchmusic":
         speech = "Invalid Action specified"
         return createResponse(speech, speech)
-    #yql_url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+req.get("result").get("parameters").get("Artist")+"&api_key=c68de8a6159c02cd683804aa40debc53&format=json"
-    return createResponse("hi","hi")
+    return createResponse("Hi","Hi")
+    yql_url = "https://newsapi.org/v1/articles?source=cnn&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     #return {
@@ -55,16 +54,14 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-    query = data.get("toptracks")
+    query = data.get("articles")
     if query is None:
         speech = "query element missing from news's response"
         return createResponse(speech, speech)
-    #for i in range(0,0)
-      songname= data.get("toptracks").get("track")[0].get("name")
-      speech=1+". "+songname+"\n"
     #if (title is None) or (description is None):
     #    speech = "Hmm! Looks like we could not fetch the news"
    # else:
+    speech = "\n"+"Title: " + title +"\n\n"+ "Description: " + descrip+"\n\n"+"Read in detail here:"+newsurl
     
     # print(json.dumps(item, indent=4))
 
@@ -81,7 +78,8 @@ def createResponse(speech, displayText):
 ##    print (speech)
     return {
 	"speech":speech,
-	"displayText":displayText
+	"displayText":displayText,
+	"imageUrl":imageUrl
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
