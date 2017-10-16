@@ -60,7 +60,6 @@ def makeWebhookResult(data):
     from random import randint
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
-    print(title)
     descrip = data.get("articles")[i].get("description")
     newsurl=data.get("articles")[i].get("url")
     urltoimage=data.get("articles")[i].get("urlToImage")
@@ -110,31 +109,31 @@ def createResponse(speech, displayText,imageUrl,data):
        {
 	"speech":speech,
 	"displayText":displayText,
-	"data": {
-        "facebook": {
-          "attachment": {
-          "type":"template",
-          "payload":{
-          "template_type":"generic",
-          #"top_element_style": "compact",
-           "elements":[
-           {
-            "title":"title goes here"#data.get("articles")[i].get("title"),
-            "subtitle":"sub goes here" #data.get("articles")[i].get("description"),
-            "image_url":imageUrl,
-	   # "buttons":[]
-            }
+	#"data": {
+        #"facebook": {
+        #  "attachment": {
+        #  "type":"template",
+        #  "payload":{
+        #  "template_type":"generic",
+        ##  #"top_element_style": "compact",
+        #   "elements":[
+        ##   {
+         #   "title":"title goes here"#data.get("articles")[i].get("title"),
+        #    "subtitle":"sub goes here" #data.get("articles")[i].get("description"),
+        #    "image_url":imageUrl,
+	#   # "buttons":[]
+        #    }
             #{
 	    # "title":"B",
 	    # "subtitle":"b",
             # "image_url":imageUrl,
             # "buttons":[]
 	    #}
-	   ]
-          }
-        }
-       }
-      }
+	#   ]
+        #  }
+        #}
+       #}
+      #}
       }
         # "data": data,
         # "contextOut": [],
