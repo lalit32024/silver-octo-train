@@ -87,14 +87,19 @@ def createResponse(speech, displayText,imageUrl):
 	"data": {
         "facebook": {
           "attachment": {
-            "type": "image",
-            "payload": {
-              "url": imageUrl
-            }
+           "type":"template",
+          "payload":{
+          "template_type":"generic",
+           "elements":[
+           {
+            "title":"Title goes here",
+            "image_url":imageUrl
+            }]
           }
         }
        }
       }
+    }
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
