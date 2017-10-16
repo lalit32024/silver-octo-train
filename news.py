@@ -38,7 +38,7 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "news.search":
         speech = "Invalid Action specified"
-        return createResponse(speech, speech)
+        return createResponse(speech, speech,data)
     yql_url = "https://newsapi.org/v1/articles?source=the-times-of-india&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
     data = json.loads(result)
@@ -56,7 +56,7 @@ def makeWebhookResult(data):
     query = data.get("articles")
     if query is None:
         speech = "query element missing from news's response"
-        return createResponse(speech, speech,imageUrl,data)
+        return createResponse(speech, speech,data)
     from random import randint
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
@@ -76,7 +76,7 @@ def makeWebhookResult(data):
 ##    print(createResponse(speech, speech))
 ##    print("------XXXX-----")
 
-    return createResponse(speech, speech,urltoimage,data)
+    return createResponse(speech, speech,data)
 
 def createResponse(speech, displayText,data):
     from random import randint
