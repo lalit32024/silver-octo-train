@@ -82,20 +82,20 @@ def createResponse(speech, displayText,imageUrl,data):
     #from random import randint
     #i=randint(0,5)
     return {"speech":speech,
-	    "displayText":displayText,
-	"data": {
-        "facebook": {
-          "attachment": {
-		  "type":"template"
-		  "payload":{
-		    "template_type":"generic"
-		    "elements":[{
-		    "title":data.get("articles")[i].get("title"),
-	             "subtitle":data.get("articles")[i].get("description"),
-	            "image_url":imageUrl
-		   }]
-		  }
-	  }}}}
+	    "displayText":displayText}
+	#"data": {
+        #"facebook": {
+        #  "attachment": {
+#		  "type":"template"
+#		  "payload":{
+#		    "template_type":"generic"
+#		    "elements":[{
+#		    "title":data.get("articles")[i].get("title"),
+#	             "subtitle":data.get("articles")[i].get("description"),
+#	            "image_url":imageUrl
+#		   }]
+#		  }
+#	  }}}}
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
