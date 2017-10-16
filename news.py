@@ -83,7 +83,6 @@ def createResponse(speech, displayText,data):
     i=randint(0,5) 
     title=data.get("articles")[i].get("title")
     urltoimage=data.get("articles")[i].get("urlToImage")
-    newsurl=data.get("articles")[i].get("url")
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
