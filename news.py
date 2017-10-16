@@ -103,7 +103,32 @@ def createResponse(speech, displayText,imageUrl,data):
     for i in range(0,6):
 	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
 	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
-    return d
+    return 
+       {
+	"speech":speech,
+	"displayText":displayText,
+	"data": {
+        "facebook": {
+          "attachment": {
+          "type":"template",
+          "payload":{
+          "template_type":"list",
+          "top_element_style": "compact",
+           "elements":[
+           {
+            "title":"A",
+            "image_url":image_Url
+            }
+            {
+	     "title":"B"
+             "image_url":image_Url
+	    }
+	   ]
+          }
+        }
+       }
+      }
+      }
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
