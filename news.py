@@ -119,8 +119,8 @@ def createResponse(speech, displayText,imageUrl,data):
           #"top_element_style": "compact",
            "elements":[
            {
-            "title":data.get("articles")[i].get("title"),
-            "subtitle":data.get("articles")[i].get("description"),
+            "title":"title goes here"#data.get("articles")[i].get("title"),
+            "subtitle":"sub goes here" #data.get("articles")[i].get("description"),
             "image_url":imageUrl,
 	   # "buttons":[]
             }
