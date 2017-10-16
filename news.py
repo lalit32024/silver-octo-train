@@ -84,16 +84,20 @@ def createResponse(speech, displayText,imageUrl):
     return {
 	"speech":speech,
 	"displayText":displayText,
-	"attachments": [{
+	"data": {
+        "facebook": {
+          "attachment": {
             "type": "image",
             "payload": {
-                "imageUrl":imageUrl
+              "url": imageUrl
             }
-        }]
+          }
+        }
+       }
+      }
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
-    }
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
