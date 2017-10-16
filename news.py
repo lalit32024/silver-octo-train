@@ -60,6 +60,7 @@ def makeWebhookResult(data):
     from random import randint
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
+    print(title)
     descrip = data.get("articles")[i].get("description")
     newsurl=data.get("articles")[i].get("url")
     urltoimage=data.get("articles")[i].get("urlToImage")
