@@ -56,7 +56,7 @@ def makeWebhookResult(data):
     query = data.get("articles")
     if query is None:
         speech = "query element missing from news's response"
-        return createResponse(speech, speech,imageUrl)
+        return createResponse(speech, speech,imageUrl,data)
     from random import randint
     i=randint(0,6)
     title = data.get("articles")[i].get("title")
@@ -76,11 +76,31 @@ def makeWebhookResult(data):
 ##    print(createResponse(speech, speech))
 ##    print("------XXXX-----")
 
-    return createResponse(speech, speech,urltoimage)
+    return createResponse(speech, speech,urltoimage,data)
 
-def createResponse(speech, displayText,imageUrl):
+def createResponse(speech, displayText,imageUrl,data):
 ##    print("Response:")
 ##    print (speech)
+    d={"speech":speech,
+	"displayText":displayText,
+	"data": {
+        "facebook": {
+          "attachment": {
+           "type":"template",
+          "payload":{
+          "template_type":"generic",
+           "elements":[
+           {
+            "title":"",
+            "image_url":
+            }]
+          }
+        }
+       }
+      }}
+    for i in range(0,9):
+	var str = d.get("data").get("faceboo").get("attachment").get("payload").get("elements")[i].get("title")=data.get("articles")[i].get("title")
+        print(var)
     return {
 	"speech":speech,
 	"displayText":displayText,
