@@ -82,29 +82,28 @@ def makeWebhookResult(data):
 def createResponse(speech, displayText,imageUrl,data):
 ##    print("Response:")
 ##    print (speech)
-    ''' d={"speech":speech,
-	"displayText":displayText,
-	"data": {
-        "facebook": {
-          "attachment": {
-           "type":"template",
-          "payload":{
-          "template_type":"list",
-          "top_element_style": "compact",
-           "elements":[
-           {
-            "title":"",
-	    "subtitle":"",
-            "image_url":""
-            }]
-          }
-        }
-       }
-      }} 
-   '''
-    for i in range(0,6):
-	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
-	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
+   #  d={"speech":speech,
+#	"displayText":displayText,
+#	"data": {
+ #       "facebook": {
+  #        "attachment": {
+  #         "type":"template",
+   #       "payload":{
+    #      "template_type":"list",
+    #      "top_element_style": "compact",
+    #       "elements":[
+    #       {
+    #        "title":"",
+#	    "subtitle":"",
+#            "image_url":""
+#            }]
+#          }
+#        }
+#       }
+#      }} 
+  #  for i in range(0,6):
+#	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
+#	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
     return 
        {
 	"speech":speech,
