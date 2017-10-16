@@ -79,12 +79,9 @@ def makeWebhookResult(data):
     return createResponse(speech, speech,urltoimage,data)
 
 def createResponse(speech, displayText,imageUrl,data):
-    from random import randint
-    i=randint(0,5)
-    return 
-       {
-	"speech":speech,
-	"displayText":displayText
+    #from random import randint
+    #i=randint(0,5)
+    return {"speech":speech,"displayText":displayText}
 	#"data": {
         #"facebook": {
         #  "attachment": {
@@ -110,7 +107,6 @@ def createResponse(speech, displayText,imageUrl,data):
         #}
        #}
       #}
-      }
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
