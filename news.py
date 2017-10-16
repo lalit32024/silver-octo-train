@@ -87,7 +87,7 @@ def createResponse(speech, displayText,imageUrl):
 	"data": {
         "facebook": {
           "attachment": {
-            "type": "template",
+            "type": "image",
             "payload": {
               "url": imageUrl
             }
