@@ -94,6 +94,7 @@ def createResponse(speech, displayText,imageUrl,data):
            "elements":[
            {
             "title":"",
+	    "subtitle":"",
             "image_url":""
             }]
           }
@@ -118,11 +119,15 @@ def createResponse(speech, displayText,imageUrl,data):
            "elements":[
            {
             "title":"A",
-            "image_url":image_Url
+            "subtitle":"a",
+            "image_url":image_Url,
+	    "buttons":[]
             }
             {
-	     "title":"B"
-             "image_url":image_Url
+	     "title":"B",
+	     "subtitle":"b",
+             "image_url":image_Url,
+             "buttons":[]
 	    }
 	   ]
           }
