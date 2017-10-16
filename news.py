@@ -104,6 +104,8 @@ def createResponse(speech, displayText,imageUrl,data):
   #  for i in range(0,6):
 #	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
 #	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
+    form random import randint
+    i=randnt(0,5)
     return 
        {
 	"speech":speech,
@@ -113,21 +115,21 @@ def createResponse(speech, displayText,imageUrl,data):
           "attachment": {
           "type":"template",
           "payload":{
-          "template_type":"list",
-          "top_element_style": "compact",
+          "template_type":"generic",
+          #"top_element_style": "compact",
            "elements":[
            {
-            "title":"A",
-            "subtitle":"a",
+            "title":data.get("articles")[i].get("title"),
+            "subtitle":data.get("articles")[i].get("description"),
             "image_url":imageUrl,
-	    "buttons":[]
+	   # "buttons":[]
             }
-            {
-	     "title":"B",
-	     "subtitle":"b",
-             "image_url":imageUrl,
-             "buttons":[]
-	    }
+            #{
+	    # "title":"B",
+	    # "subtitle":"b",
+            # "image_url":imageUrl,
+            # "buttons":[]
+	    #}
 	   ]
           }
         }
