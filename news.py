@@ -79,8 +79,10 @@ def makeWebhookResult(data):
     return createResponse(speech, speech,urltoimage,data)
 
 def createResponse(speech, displayText,imageUrl,data):
-    #from random import randint
-    #i=randint(0,5)
+    from random import randint
+    i=randint(0,5) 
+    title=data.get("articles")[i].get("title")
+    urltoimage=data.get("articles")[i].get("urlToImage")
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
@@ -91,7 +93,7 @@ def createResponse(speech, displayText,imageUrl,data):
              "template_type":"generic",
             "elements":[
             {
-             "title":"Title goes here",
+             "title":title,
              "image_url":imageUrl
              }]
 		   }
