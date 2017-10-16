@@ -89,38 +89,21 @@ def createResponse(speech, displayText,imageUrl,data):
           "attachment": {
            "type":"template",
           "payload":{
-          "template_type":"generic",
+          "template_type":"list",
+          "top_element_style": "compact",
            "elements":[
            {
             "title":"",
-            "image_url":
+            "image_url":""
             }]
           }
         }
        }
       }}
-    for i in range(0,9):
-	var str = d.get("data").get("faceboo").get("attachment").get("payload").get("elements")[i].get("title")=data.get("articles")[i].get("title")
-        print(var)
-    return {
-	"speech":speech,
-	"displayText":displayText,
-	"data": {
-        "facebook": {
-          "attachment": {
-           "type":"template",
-          "payload":{
-          "template_type":"generic",
-           "elements":[
-           {
-            "title":"Title goes here",
-            "image_url":imageUrl
-            }]
-          }
-        }
-       }
-      }
-    }
+    for i in range(0,6):
+	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
+	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
+    return d
         # "data": data,
         # "contextOut": [],
         #"source": "apiai-news-org"
