@@ -87,9 +87,9 @@ def createResponse(speech, displayText,data):
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
-              "facebook": {
-                "attachment": {
-	       "type":"template",
+             "facebook": {
+             "attachment": {
+	    "type":"template",
             "payload":{
              "template_type":"generic",
             "elements":[
@@ -97,7 +97,9 @@ def createResponse(speech, displayText,data):
              "title":title,
              "image_url":urltoimage
              }]
-      }}}}}
+      }}
+	}}
+     }
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
