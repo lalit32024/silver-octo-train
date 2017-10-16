@@ -104,8 +104,8 @@ def createResponse(speech, displayText,imageUrl,data):
   #  for i in range(0,6):
 #	d.data.facebook.attachment.payload.elements[i].title=data.get("articles")[i].get("title")
 #	d.data.facebook.attachment.payload.elements[i].image_url=image_Url
-    form random import randint
-    i=randnt(0,5)
+    from random import randint
+    i=randint(0,5)
     return 
        {
 	"speech":speech,
