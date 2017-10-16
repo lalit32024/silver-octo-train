@@ -119,13 +119,13 @@ def createResponse(speech, displayText,imageUrl,data):
            {
             "title":"A",
             "subtitle":"a",
-            "image_url":image_Url,
+            "image_url":imageUrl,
 	    "buttons":[]
             }
             {
 	     "title":"B",
 	     "subtitle":"b",
-             "image_url":image_Url,
+             "image_url":imageUrl,
              "buttons":[]
 	    }
 	   ]
