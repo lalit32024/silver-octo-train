@@ -95,17 +95,13 @@ def createResponse(speech, displayText,data):
             "elements":[
             {
              "title":title,
-             "image_url":urltoimage
+             "image_url":urltoimage,
 	     "default_action": {
              "type": "web_url",
-             "url":newsurl,
-             "messenger_extensions": true,
-             "webview_height_ratio": "tall"
+             "url":newsurl
             }
              }]
-		   }
-		  }
-	  }}}
+      }}}}}
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
