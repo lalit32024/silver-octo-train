@@ -81,19 +81,20 @@ def makeWebhookResult(data):
 def createResponse(speech, displayText,imageUrl,data):
     #from random import randint
     #i=randint(0,5)
-    return {"speech":speech,"displayText":displayText}
-	#"data": {
-        #"facebook": {
-        #  "attachment": {
-        #  "type":"template",
-        #  "payload":{
-        #  "template_type":"generic",
-        ##  #"top_element_style": "compact",
-        #   "elements":[
-        ##   {
-         #   "title":"title goes here"#data.get("articles")[i].get("title"),
+    return {"speech":speech,
+	    "displayText":displayText,
+	"data": {
+        "facebook": {
+          "attachment": {
+          "type":"template",
+          "payload":{
+          "template_type":"generic",
+        #  #"top_element_style": "compact",
+           "elements":[
+           {
+            "title":"title goes here"#data.get("articles")[i].get("title")
         #    "subtitle":"sub goes here" #data.get("articles")[i].get("description"),
-        #    "image_url":imageUrl,
+            "image_url":imageUrl}]}}}}
 	#   # "buttons":[]
         #    }
             #{
