@@ -88,14 +88,12 @@ def createResponse(speech, displayText,imageUrl,data):
                 "attachment": {
 		  "type":"template",
 		  "payload":{
-		    "template_type":"generic",
-		    "elements":[{
 		       "title":data.get("articles")[i].get("title"),
 	               "subtitle":data.get("articles")[i].get("description"),
 	               "image_url":imageUrl
-		   }]
+		   }
 		  }
-	  }}}}
+	  }}}
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
