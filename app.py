@@ -57,7 +57,7 @@ def processRequest(req):
        from stock import processRequest
        res = processRequest(req)
     if req.get("result").get("action") == "news.search":
-       from news import processRequest
+       from newws import processRequest
        res = processRequest(req)
     if req.get("result").get("action") == "telljoke":
        from joke import processRequest
