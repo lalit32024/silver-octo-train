@@ -80,9 +80,6 @@ def makeWebhookResult(data):
 
 def createResponse(speech, displayText,data):
     article=data.get("articles")
-    title=article[0].get("title")
-    urltoimage=article[0].get("urlToImage")
-    newsurl=article[0].get("url")
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
@@ -96,6 +93,10 @@ def createResponse(speech, displayText,data):
              "title": article[0].get("title"),
             "subtitle": article[0].get("description"),
             "image_url":article[0].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[0].get("url")
+            },
             "buttons": [
               {
                 "title": "View",
@@ -105,23 +106,98 @@ def createResponse(speech, displayText,data):
             ]
           },
           {
-            "title": article[1].get("title"),
+             "title": article[1].get("title"),
             "subtitle": article[1].get("description"),
-	    "image_url":article[1].get("urlToImage"),
-            "default_action": {
+            "image_url":article[1].get("urlToImage"),          
+			"default_action": {
               "type": "web_url",
               "url": article[1].get("url")
-            }
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[1].get("url")
+              }
+            ]
           },
           {
-            "title": article[2].get("title"),
-            "image_url": article[2].get("urlToImage"),
+             "title": article[2].get("title"),
             "subtitle": article[2].get("description"),
-            "default_action": {
+            "image_url":article[2].get("urlToImage"),          
+			"default_action": {
               "type": "web_url",
               "url": article[2].get("url")
-            }  
-            }
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[2].get("url")
+              }
+            ]
+          },
+		  {
+             "title": article[3].get("title"),
+            "subtitle": article[3].get("description"),
+            "image_url":article[3].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[3].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[3].get("url")
+              }
+            ]
+          },{
+             "title": article[4].get("title"),
+            "subtitle": article[4].get("description"),
+            "image_url":article[4].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[4].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[4].get("url")
+              }
+            ]
+          },{
+             "title": article[5].get("title"),
+            "subtitle": article[5].get("description"),
+            "image_url":article[5].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[5].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[5].get("url")
+              }
+            ]
+          },{
+             "title": article[6].get("title"),
+            "subtitle": article[6].get("description"),
+            "image_url":article[6].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[6].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[6].get("url")
+              }
+            ]
+          }
              ]
       }}
 	}}
