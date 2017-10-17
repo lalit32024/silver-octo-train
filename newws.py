@@ -79,11 +79,10 @@ def makeWebhookResult(data):
     return createResponse(speech, speech,data)
 
 def createResponse(speech, displayText,data):
-    from random import randint
-    i=randint(0,5) 
-    title=data.get("articles")[i].get("title")
-    urltoimage=data.get("articles")[i].get("urlToImage")
-    newsurl=data.get("articles")[i].get("url")
+    article=data.get("articles")
+    title=article[0].get("title")
+    urltoimage=article[0].get("urlToImage")
+    newsurl=article[0].get("url")
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
@@ -94,13 +93,36 @@ def createResponse(speech, displayText,data):
              "template_type":"generic",
             "elements":[
             {
-             "title":title,
-             "image_url":urltoimage,
-             "default_action": {
+             "title": article[0].get("title"),
+            "subtitle": article[0].get("description"),
+            "image_url":article[0].get("urlToImage"),          
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[0].get("url")
+              }
+            ]
+          },
+          {
+            "title": article[1].get("title"),
+            "subtitle": article[1].get("description"),
+	    "image_url":article[1].get("urlToImage"),
+            "default_action": {
               "type": "web_url",
-              "url": newsurl
+              "url": article[1].get("url")
             }
-             }]
+          },
+          {
+            "title": article[2].get("title"),
+            "image_url": article[2].get("urlToImage"),
+            "subtitle": article[2].get("description"),
+            "default_action": {
+              "type": "web_url",
+              "url": article[2].get("url")
+            }  
+            }
+             ]
       }}
 	}}
      }
