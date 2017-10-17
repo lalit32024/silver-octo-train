@@ -39,7 +39,7 @@ def processRequest(req):
     if req.get("result").get("action") != "news.search":
         speech = "Invalid Action specified"
         return createResponse(speech, speech,data)
-    yql_url = "https://newsapi.org/v1/articles?source=ign&apiKey=6614fb3731b2472c9efa015800e01de3"
+    yql_url = "https://newsapi.org/v1/articles?source=the-times-of-india&apiKey=6614fb3731b2472c9efa015800e01de3"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     #return {
@@ -79,11 +79,7 @@ def makeWebhookResult(data):
     return createResponse(speech, speech,data)
 
 def createResponse(speech, displayText,data):
-    from random import randint
-    i=randint(0,5) 
-    title=data.get("articles")[i].get("title")
-    urltoimage=data.get("articles")[i].get("urlToImage")
-    newsurl=data.get("articles")[i].get("url")
+    article=data.get("articles")
     return {"speech":speech,
 	    "displayText":displayText,
 	    "data": {
@@ -94,13 +90,115 @@ def createResponse(speech, displayText,data):
              "template_type":"generic",
             "elements":[
             {
-             "title":title,
-             "image_url":urltoimage,
-             "default_action": {
+             "title": article[0].get("title"),
+            "subtitle": article[0].get("description"),
+            "image_url":article[0].get("urlToImage"),          
+			"default_action": {
               "type": "web_url",
-              "url": newsurl
-            }
-             }]
+              "url": article[0].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[0].get("url")
+              }
+            ]
+          },
+          {
+             "title": article[1].get("title"),
+            "subtitle": article[1].get("description"),
+            "image_url":article[1].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[1].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[1].get("url")
+              }
+            ]
+          },
+          {
+             "title": article[2].get("title"),
+            "subtitle": article[2].get("description"),
+            "image_url":article[2].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[2].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[2].get("url")
+              }
+            ]
+          },
+		  {
+             "title": article[3].get("title"),
+            "subtitle": article[3].get("description"),
+            "image_url":article[3].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[3].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[3].get("url")
+              }
+            ]
+          },{
+             "title": article[4].get("title"),
+            "subtitle": article[4].get("description"),
+            "image_url":article[4].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[4].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[4].get("url")
+              }
+            ]
+          },{
+             "title": article[5].get("title"),
+            "subtitle": article[5].get("description"),
+            "image_url":article[5].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[5].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[5].get("url")
+              }
+            ]
+          },{
+             "title": article[6].get("title"),
+            "subtitle": article[6].get("description"),
+            "image_url":article[6].get("urlToImage"),          
+			"default_action": {
+              "type": "web_url",
+              "url": article[6].get("url")
+            },
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": article[6].get("url")
+              }
+            ]
+          }
+             ]
       }}
 	}}
      }
