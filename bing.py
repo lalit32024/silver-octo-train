@@ -35,8 +35,6 @@ import http.client, urllib.parse, json
 
 # Flask app should start in global layout
 app = Flask(__name__)
- 
-@app.route('/webhook', methods=['POST'])
 
 def giveResult(request):
     if len(subscriptionKey) == 32:
@@ -47,8 +45,7 @@ def giveResult(request):
         print("\nJSON Response:\n")
         data =json.dumps(json.loads(result), indent=4)
         res = createResponse(data)
-	return {speech:"hi",displayText:"hi"}
-        #return res
+        return res
     else:
         print("Invalid Bing Search API subscription key!")
         print("Please paste yours into the source code.")
@@ -56,8 +53,6 @@ def giveResult(request):
 
 
 def BingWebSearch(search):
-    "Performs a Bing Web search and returns the results."
-
     headers = {'Ocp-Apim-Subscription-Key': subscriptionKey}
     conn = http.client.HTTPSConnection(host)
     query = urllib.parse.quote(search)
