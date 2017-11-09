@@ -34,12 +34,12 @@ subscriptionKey = "2f22ecfd9fa54027ba5976df791e98a7"
 host = "api.cognitive.microsoft.com"
 path = "/bing/v7.0/search"
 
-term = "automata"
 
 
 def giveResult(request):
     if len(subscriptionKey) == 32:
-        print('Searching the Web for: ', "iphoneX")
+        term=request.get("result").get("resolvedQuery")
+        print('Searching the Web for: ',term)
         headers, result = BingWebSearch(term)
         print("\nRelevant HTTP Headers:\n")
         print("\n".join(headers))
