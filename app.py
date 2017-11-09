@@ -66,6 +66,7 @@ def processRequest(req):
        from music import processRequest
        res=processRequest(req)
     if req.get("result").get("action") == "WebSearch":
+       return{speech:"hi",displayText:"hi"}
        from bing import giveResult
        res = giveResult(req)
     return res
