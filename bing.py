@@ -44,10 +44,10 @@ def giveResult(request):
         print("\nRelevant HTTP Headers:\n")
         print("\n".join(headers))
         print("\nJSON Response:\n")
-        # print(json.dumps(json.loads(result), indent=4))
+        #print(json.dumps(json.loads(result), indent=4))
         data = json.dumps(json.loads(result), indent=4)
         res = createResponse(data)
-        print(res)
+        #print(res)
         return res
     else:
         print("Invalid Bing Search API subscription key!")
