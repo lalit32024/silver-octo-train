@@ -5,17 +5,7 @@
 # *** Update or verify the following values. ***
 # **********************************************
 
-# Replace the subscriptionKey string value with your valid subscription key.
-subscriptionKey = "2f22ecfd9fa54027ba5976df791e98a7"
 
-# Verify the endpoint URI.  At this writing, only one endpoint is used for Bing
-# search APIs.  In the future, regional endpoints may be available.  If you
-# encounter unexpected authorization errors, double-check this value against
-# the endpoint for your Bing Web search instance in your Azure dashboard.
-host = "api.cognitive.microsoft.com"
-path = "/bing/v7.0/search"
-
-term = "iphoneX"
 
 from __future__ import print_function
 from future.standard_library import install_aliases
@@ -33,9 +23,17 @@ from flask import request
 from flask import make_response
 import http.client, urllib.parse, json
 
-# Flask app should start in global layout
-app = Flask(__name__)
+# Replace the subscriptionKey string value with your valid subscription key.
+subscriptionKey = "2f22ecfd9fa54027ba5976df791e98a7"
 
+# Verify the endpoint URI.  At this writing, only one endpoint is used for Bing
+# search APIs.  In the future, regional endpoints may be available.  If you
+# encounter unexpected authorization errors, double-check this value against
+# the endpoint for your Bing Web search instance in your Azure dashboard.
+host = "api.cognitive.microsoft.com"
+path = "/bing/v7.0/search"
+
+term = "iphoneX"
 def giveResult(request):
     if len(subscriptionKey) == 32:
         print('Searching the Web for: ', "iphoneX")
