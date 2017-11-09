@@ -68,6 +68,7 @@ def processRequest(req):
     if req.get("result").get("action") == "WebSearch":
        from bing import giveResult
        res = giveResult(req)
+       print(res)
     return res
 
 if __name__ == '__main__':
