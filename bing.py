@@ -37,7 +37,7 @@ path = "/bing/v7.0/search"
 term = "automata"
 
 
-def giveResult():
+def giveResult(request):
     if len(subscriptionKey) == 32:
         print('Searching the Web for: ', "iphoneX")
         headers, result = BingWebSearch(term)
@@ -129,4 +129,3 @@ def createResponse(data):
             }
 
 
-giveResult()
