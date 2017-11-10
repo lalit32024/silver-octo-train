@@ -46,7 +46,7 @@ def giveResult(request):
         print("\nJSON Response:\n")
         #print(json.dumps(json.loads(result), indent=4))
         data = json.dumps(json.loads(result), indent=4)
-        res = createResponse(data)
+        res = createResponse(data,request)
         #print(res)
         return res
     else:
@@ -67,7 +67,7 @@ def BingWebSearch(search):
     return headers, response.read().decode("utf8")
 
 
-def createResponse(data):
+def createResponse(data,request):
     data=json.loads(data)
     webPages=data.get("webPages")#.get("value")
     val=webPages.get("value")
@@ -119,9 +119,9 @@ def createResponse(data):
                                 }],
                             "buttons": [
                                 {
-                                    "title": "Read More",
-                                    "type": "postback",
-                                    "payload": "read more"
+                                    "title": "More Results",
+                                    "type": "web_url",
+                                    "url":"https://www.google.co.in/search?source=hp&ei=hJIFWoO-I8rqvgTs3JzoBQ&q="+request.get("result").get("resolvedQuery")+"&oq=automata&gs_l=psy-ab.3...2003.3256.0.3406.10.7.0.0.0.0.0.0..0.0....0...1.1.64.psy-ab..10.0.0.0...0.oMuvqur__Fo"
                                 }
                             ]
                         }}
